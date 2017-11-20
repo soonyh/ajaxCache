@@ -22,23 +22,23 @@
 
 ## options
 
-_cacheInterval_
++ _cacheInterval_
 缓存时间（单位毫秒），不填默认为60分钟
 
 ## 方法
  _load(url,data)_ 
  异步请求代码片段
  
- _post(url,data[,dataType])_   dataType可选，不填默认为json
+ + _post(url,data[,dataType])_   dataType可选，不填默认为json
 
- _get(url,data[,dataType])_   
+ + _get(url,data[,dataType])_   
  
- _syncPost(url,data[,dataType])_ 
+ + _syncPost(url,data[,dataType])_ 
  
- _syncGet(url,data[,dataType])_  
+ + _syncGet(url,data[,dataType])_  
  
- _cache    
+ + _cache    
  返回一个对象，每次异步请求都以key是url + $.param(data)缓存其中。 
  
- _abort()_  中断异步请求   
+ + _abort()_  中断异步请求   
  
