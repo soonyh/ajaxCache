@@ -28,10 +28,10 @@ _cacheInterval_
 缓存时间（单位毫秒），不填默认为60分钟
 
 ## 方法
- _load(url,data[,dataType])_   //dataType，不写默认“json”
- _post(url,data[,dataType])_
- _get(url,data[,dataType])_
- _syncPost(url,data[,dataType])_
- _syncGet(url,data[,dataType])_
- _cache    所有异步请求的缓存
- _abort()_  中断异步请求
+ _load(url,data[,dataType])_   //dataType，不写默认“json”  
+ _post(url,data[,dataType])_  
+ _get(url,data[,dataType])_   
+ _syncPost(url,data[,dataType])_ 
+ _syncGet(url,data[,dataType])_  
+ _cache    所有异步请求的缓存 
+ _abort()_  中断异步请求   
