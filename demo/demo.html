@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <button data-url="data1.json" onclick="post(this)">Ajax.post()</button>
+  <button data-url="snippet.html" onclick="load(this)">Ajax.load()</button>
+  <button onclick="Ajax.clear()">删除缓存</button>
+  <button onclick="Ajax.abort()">中断请求</button>
+  <br>
+  <ol id="records"></ol>
+  <script src='http://libs.baidu.com/jquery/1.10.0/jquery.min.js'></script>
+  <script src="mock.js"></script>
+  <script>
+    var Random = Mock.Random;
+    Mock.setup({
+      timeout: '3000'
+    });
+    Mock.mock(/data/, {
+      "health": {
+        "code": 1111,
+      }
+    });
+    $(document).ajaxStart(function() {
+      $('#records').append('<li id="loading">loading...</li>');
+    })
+    $(document).ajaxStop(function() {
+      $('#loading').remove();
+    })
+  </script>
+  <script src="../ajaxCache.js"></script>
+  <script>
+    var Ajax = AjaxCache({
+      cacheInterval: 1000 * 1000
+    });
+    var post = function(el) {
+      Ajax.post($(el).data('url'), {
+        name:'soon'
+      }).done(function(data) {
+        $('#records').append('<li>返回数据：' + JSON.stringify(data) + '   ------ 来源:' + $(el).data('url') + '</li>');
+      })
+    };
+    var load = function(el) {
+      Ajax.load($(el).data('url')).done(function(data) {
+        $('#records').append(data);
+      }).fail(function(){
+        alert('请以http://方式访问')
+      })
+    };
+  </script>
+</body>
+
+</html>
