@@ -1,8 +1,6 @@
 # ajaxCache
 对$.ajax()的二次封装。缓存异步请求的返回结果,并根据习惯自定义了API，仅1.47K
 
-注：代码参考自参考：http://www.cnblogs.com/lyzg/p/5370127.html
-
 ## 安装
 
 支持直接引入,如下：
@@ -28,10 +26,19 @@ _cacheInterval_
 缓存时间（单位毫秒），不填默认为60分钟
 
 ## 方法
- _load(url,data[,dataType])_   //dataType，不写默认“json”  
- _post(url,data[,dataType])_  
- _get(url,data[,dataType])_   
+ _load(url,data)_ 
+ 异步请求代码片段
+ 
+ _post(url,data[,dataType])_   dataType可选，不填默认为json
+
+ _get(url,data[,dataType])_   
+ 
  _syncPost(url,data[,dataType])_ 
+ 
  _syncGet(url,data[,dataType])_  
- _cache    所有异步请求的缓存 
+ 
+ _cache    
+ 返回一个对象，每次异步请求都以key是url + $.param(data)缓存其中。 
+ 
  _abort()_  中断异步请求   
+ 
