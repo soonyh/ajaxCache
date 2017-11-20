@@ -37,7 +37,7 @@
  
  + _syncGet(url,data[,dataType])_  
  
- + _cache    
+ + _cache_    
  返回一个对象，每次异步请求都以key是url + $.param(data)缓存其中。 
  
  + _abort()_  中断异步请求   
