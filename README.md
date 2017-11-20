@@ -26,7 +26,7 @@
 缓存时间（单位毫秒），不填默认为60分钟
 
 ## 方法
- _load(url,data)_ 
+ _load(url)_ 
  异步请求代码片段
  
  + _post(url,data[,dataType])_   dataType可选，不填默认为json
