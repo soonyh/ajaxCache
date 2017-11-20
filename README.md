@@ -1,5 +1,5 @@
 # ajaxCache
-对$.ajax()的二次封装。缓存异步请求的返回结果,并根据习惯自定义了API，仅1.47K
+对$.ajax()的二次封装。缓存异步请求的返回结果,并根据习惯自定义了API，仅1.55K
 
 ![动画](http://oaaq2vqkp.bkt.clouddn.com/1.gif)
 
